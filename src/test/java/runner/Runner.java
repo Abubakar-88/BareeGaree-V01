@@ -10,6 +10,7 @@ import org.junit.runner.RunWith;
 		features = {"src/test/resources/features"}, 
 		glue = {"stepDefinitions"},
 		monochrome=true,
+		tags = "@admin",
       // dryRun = true,
 		plugin = {
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
