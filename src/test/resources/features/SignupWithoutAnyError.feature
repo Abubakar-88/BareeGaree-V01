@@ -24,7 +24,7 @@ Scenario Outline: Customer can be Signup with successfully
 
 Examples:
 |SheetName | RowNumber |
-|bareegaree |  0       |
+|genBaree |  0       |
 
 
 

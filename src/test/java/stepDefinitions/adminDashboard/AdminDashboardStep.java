@@ -469,4 +469,26 @@ public class AdminDashboardStep extends Base {
         generalUser.isAactive();
     }
 
+    @And("I hover on the Repending post")
+    public void iHoverOnTheRependingPost() {
+        delayOfElement(5);
+        pendingPost.hoverOnTheRePendingPost();
+    }
+
+    @And("I click on the RePending job")
+    public void iClickOnTheRePendingJob() {
+        delayOfElement(3);
+        pendingPost.clickOnRePendingJob();
+    }
+
+    @And("I click on admin login submit btn")
+    public void iClickOnAdminLoginSubmitBtn() {
+        delayOfElement(3);
+        acPElectronics.clickOnAdminLoginSubBtn();
+    }
+
+    @And("I click on the Preview link for update Repending post {string}")
+    public void iClickOnThePreviewLinkForUpdateRependingPost(String title) {
+        pendingPost.clickPreviewLinkRependingPost(title);
+    }
 }

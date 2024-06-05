@@ -80,6 +80,7 @@ public class JobsCatPageOfG_dashboard extends Base {
 
     }
     public void enterDescriptionOrRequirement(String description){
+        descriptionOrRequirement.clear();
         descriptionOrRequirement.sendKeys(description);
     }
 

@@ -80,6 +80,7 @@ public class JobsOfGdashboardStep extends Base {
 
     @And("I fill Description Requirement {string}")
     public void iFillDescriptionRequirement(String description) {
+        delayOfElement(2);
         jobGdashboard.enterDescriptionOrRequirement(description);
     }
 }

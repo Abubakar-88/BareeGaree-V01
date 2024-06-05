@@ -14,6 +14,7 @@ Feature: Vehicle category add posting of subcategory
     And I click on post add body
     Then I Click on the Vehicle Category
 
+  @GeneralUserDashboard @regression
   Scenario: Vehicle category Bicycle add posting functionality
     Given I click on Bicycle
     When I fill Title "Bicycle 002"
@@ -32,7 +33,7 @@ Feature: Vehicle category add posting of subcategory
       | C:\TestingPicture\bicycle02.jpg |
     And I click on submit button
 
-
+  @GeneralUserDashboard @regression
   Scenario: Vehicle category Motorbike add posting functionality
     Given I click on Motorbike
     When I fill Title "Motorbike 002"
@@ -57,6 +58,7 @@ Feature: Vehicle category add posting of subcategory
       | C:\TestingPicture\hqdefault.jpg |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: Vehicle category Car add posting functionality
     Given I click on Car
     When I fill Title "New Toyota 002"
@@ -82,8 +84,10 @@ Feature: Vehicle category add posting of subcategory
       | imagePath                        |
       |C:\TestingPicture\Toyota-Glanza-060520221539.jpg  |
       | C:\TestingPicture\corolla_w610_01.jpg |
+
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: Vehicle category Rentals add posting functionality
     Given I click on Rentals
     When I fill Title "Rentals"

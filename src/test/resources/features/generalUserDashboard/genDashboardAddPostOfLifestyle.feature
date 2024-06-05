@@ -11,7 +11,7 @@ Feature: Lifestyle category ad posting of subcategory
     And I click on login submit btn
     And I should see my profile name "Abu Siddique" in the dashboard
 
-
+  @GeneralUserDashboard @regression
   Scenario: Lifestyle category Health And Beauty ad posting functionality
     And I click on post add
     And I click on post add body
@@ -33,6 +33,7 @@ Feature: Lifestyle category ad posting of subcategory
       | C:\TestingPicture\skincare.jpg |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: Lifestyle category  after ad posting of skin and Body care  preview details functionality
   # Then I click on the dashboard menu
     And I click on the Total pending ads

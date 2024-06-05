@@ -27,10 +27,10 @@ public class ExecutivePartnerDashboard extends Base {
     private WebElement postSubmitClick;
 
 
-    @FindBy(xpath = "/html/body/section[1]/div/div/div/div/div[2]/div[4]/div[2]/div[5]/div/div[3]/button/i")
+    @FindBy(xpath = "(//div[@class='view_div_social_icon' and contains(@onclick, 'CommentShow')]/button)[1]")
     private WebElement commentClick;
 
-    @FindBy(id = "socialComment-38")
+    @FindBy(id = "socialComment-39")
     private WebElement writeComment;
 
     @FindBy(className = "download_container")
@@ -91,9 +91,9 @@ public class ExecutivePartnerDashboard extends Base {
     }
 
     public void clickOnCommentIcon(){
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", commentClick);
-         delayOfElement(2);
-        commentClick.click();
+      //  ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", commentClick);
+        fluentWaitClick(commentClick);
+
     }
     public void enterCommentArticle( String comment){
         writeComment.sendKeys(comment);

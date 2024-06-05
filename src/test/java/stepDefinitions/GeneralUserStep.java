@@ -102,6 +102,7 @@ public class GeneralUserStep extends Base {
     }
     @And("I fill address {string}")
     public void iFillAddress(String address) {
+        delayOfElement(2);
          genUserDashboard.enterAddress(address);
     }
 

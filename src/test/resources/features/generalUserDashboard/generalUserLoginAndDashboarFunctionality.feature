@@ -14,6 +14,8 @@ Feature: General user login and Dashboard functionality
     And I click on post add
     And I click on post add body
     Then I click on Properties Category
+
+  @GeneralUserDashboard @regression
   Scenario: General user can add post with Bedroom Furniture Property category
     Given I click on Bedroom Furniture
     When I fill Title "New Bedroom Furniture"
@@ -30,6 +32,7 @@ Feature: General user login and Dashboard functionality
       | C:\TestingPicture\Bedroom-Collection.jpg |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: General user can add post with Flat For Rent of Property category
     Given I click on Flat For Rent
     When I fill Title "Exclusive Flat For Rent"
@@ -54,6 +57,7 @@ Feature: General user login and Dashboard functionality
       | C:\\TestingPicture\\Bedroom-Collection.jpg |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: General user can add post with Land for Sale of Property category
     Given I click on Land for Sale
     When I fill Title "Exclusive1 Land For Sale"
@@ -75,7 +79,7 @@ Feature: General user login and Dashboard functionality
       | C:\\TestingPicture\\Bedroom-Collection.jpg |
     And I click on submit button
 
-
+  @GeneralUserDashboard @regression
   Scenario: General user can add post with Property For Rent of Property category
     Given I click on Property For Rent
     When I fill Title "Exclusive1 Land For Rent"

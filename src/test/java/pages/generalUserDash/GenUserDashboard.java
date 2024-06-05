@@ -137,6 +137,7 @@ public class GenUserDashboard extends Base {
         titleOfFurniture.sendKeys(title);
     }
     public void enterAddress(String address){
+        addressOfFurniture.clear();
         addressOfFurniture.sendKeys(address);
     }
     public void enterPhoneNumber(String phone){

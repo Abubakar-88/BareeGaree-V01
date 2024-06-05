@@ -21,6 +21,9 @@ public class ActivePost extends Base {
     @FindBy(id = "searchBox")
     WebElement searchBox;
 
+    @FindBy(id = "btnLogin")
+    WebElement adminLoginBtn;
+
     @FindBy(id = "btnSearch")
     WebElement searchButton;
 
@@ -177,7 +180,10 @@ public class ActivePost extends Base {
         firstPageButton.click();
 
     }
+    public void clickOnAdminLoginSubBtn() {
+        adminLoginBtn.click();
 
+    }
     public void navigateToLastPage() {
         lastPageButton.click();
 

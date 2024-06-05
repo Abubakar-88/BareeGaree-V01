@@ -117,7 +117,6 @@ public class ExecutivePartnerDashboardStep extends Base {
 
     @And("I click on comment icon")
     public void iClickOnCommentIcon() {
-        delayOfElement(5);
         exPartnerDash.clickOnCommentIcon();
     }
 

@@ -107,4 +107,8 @@ public class adsBoostingStep extends Base {
     }
 
 
+    @Then("I click on the edit")
+    public void iClickOnTheEdit() {
+        adsBoosting.clickOnEditAds();
+    }
 }

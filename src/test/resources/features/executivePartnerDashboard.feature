@@ -12,6 +12,7 @@ Feature: Executive partner Dashboard functionality
 
 
    # @write post place holder article spelling wrong
+  @ExecutivePartner
   Scenario Outline: Executive partner article post
 
 #  Given I should see "Write a post" title in place holder
@@ -27,6 +28,7 @@ Feature: Executive partner Dashboard functionality
       | article |
       |During the three-day final, the teams performed four missions including science exploration, autonomous navigation, extreme terrain traversal and Equipment servicing missionsto demonstrate the capabilities of their rover and operation skills |
 
+  @ExecutivePartner
   Scenario: Executive partner download pdf and comment
     Given I click on comment icon
     When I write the comment in the post "Excellent I Like it"

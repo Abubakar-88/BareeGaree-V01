@@ -21,11 +21,15 @@ public class PendingPost extends Base {
     private WebElement editBtn;
     @FindBy(xpath = "//a[text()='Pending Post']")
     private WebElement hoverOnPendingPost;
+
+    @FindBy(xpath = "//a[text()='RePending Post']")
+    private WebElement hoverOnRePendingPost;
     @FindBy(xpath = "//a[text()='Export to PDF']")
     private WebElement exportPdf;
+    @FindBy(linkText = "RePending Job")
+    private WebElement rependingJob;
     @FindBy(linkText = "All Pending Post List")
     private WebElement pendingAllPost;
-
     @FindBy(xpath = "//input[@data-bind='value: filters[1].value']")
     private WebElement secondFilterInput;
 
@@ -35,6 +39,11 @@ public class PendingPost extends Base {
     WebElement selectPostStatus;
     @FindBy(xpath = "//div[@id='PendingAllList']")
     WebElement PendingPostTable;
+
+
+
+    @FindBy(id = "rePendingJobList")
+    WebElement rePendingJobTable;
     @FindBy(xpath = "//ul[@class='k-list k-reset']")
     WebElement dropdownList;
 
@@ -73,7 +82,12 @@ public class PendingPost extends Base {
         previewLink.click();
     }
 
-
+    public void clickPreviewLinkRependingPost(String title) {
+        WebElement titleCell = rePendingJobTable.findElement(By.xpath("//td[text()='" + title + "']"));
+        WebElement row = titleCell.findElement(By.xpath("./ancestor::tr"));
+        WebElement previewLink = row.findElement(By.linkText("Preview Ad"));
+        previewLink.click();
+    }
 
     public void selectPostStatus(String status) {
 
@@ -81,7 +95,9 @@ public class PendingPost extends Base {
     }
 
 
-
+    public void hoverOnTheRePendingPost() {
+        mouseHover(hoverOnRePendingPost);
+    }
     public void hoverOnThePendingPost() {
         mouseHover(hoverOnPendingPost);
     }
@@ -97,7 +113,9 @@ public class PendingPost extends Base {
         pendingAllPost.click();
     }
 
-
+    public void clickOnRePendingJob(){
+        rependingJob.click();
+    }
 
 
 

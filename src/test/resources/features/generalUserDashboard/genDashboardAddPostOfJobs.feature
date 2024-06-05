@@ -13,6 +13,7 @@ Feature: Jobs category add posting of subcategory
     And I click on post add body
     Then I Click on the Jobs Category
 
+  @GeneralUserDashboard @regression
   Scenario: Jobs category Accountant add posting functionality
     Given I click on Accountant
     When I fill Title "Junior Accountant"

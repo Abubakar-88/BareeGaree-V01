@@ -6,6 +6,7 @@ Feature: Search Item functionality
     Given I am on the homepage
     When Satisfy that homepage is visible
 
+
   Scenario: Search for items for car in search bar from vehicles Category
     Given I search for "Car" in Search bar
     When  I click the search button

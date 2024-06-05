@@ -13,6 +13,7 @@ Feature: Electronics category add posting of subcategory
     And I click on post add body
     Then I Click on the Electronics Category
 
+  @GeneralUserDashboard @regression
   Scenario: Electronics category Mobile add posting functionality
     Given I click on Mobile
     When I fill Title "Oppo6"
@@ -35,6 +36,7 @@ Feature: Electronics category add posting of subcategory
       | C:\TestingPicture\mz4hHSCHtJYRPeaC.png |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: Electronics category Laptop add posting functionality
     Given I click on Laptops
     When I fill Title "Dell laptop"
@@ -58,6 +60,7 @@ Feature: Electronics category add posting of subcategory
       | C:\TestingPicture\laptop.jpg |
     And I click on submit button
 
+  @GeneralUserDashboard @regression
   Scenario: Electronics category Computer And Laptop Accessories add posting functionality
     Given I click on Computer And Laptop Accessories
     When I fill Title "Accessories"

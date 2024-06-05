@@ -62,7 +62,7 @@ public class signupStep extends Base {
     public void iFillOutTheSignupFormWithDataFromAndRowNumber(String sheetName, int rowNumber) throws IOException, InvalidFormatException {
         reader = new ExcelReader();
         List<Map<String,String>> readData =
-                reader.getData(System.getProperty("user.dir") + "\\src\\test\\resources\\data\\GenData.xlsx", sheetName);
+                reader.getData(System.getProperty("user.dir") + "\\src\\test\\resources\\data\\AutoData.xlsx", sheetName);
         firstName = readData.get(rowNumber).get("First name");
         lastName = readData.get(rowNumber).get("Last name");
         email = readData.get(rowNumber).get("Email");

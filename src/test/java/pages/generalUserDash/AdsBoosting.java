@@ -15,7 +15,8 @@ public class AdsBoosting extends Base {
 
     @FindBy(xpath = "(//div[@class='new_card_bottom']/button[contains(text(), 'Boost Your Ad')])[1]")
     WebElement boostAds;
-
+    @FindBy(xpath = "(//div[@class='new_card_btn']/button[contains(text(), 'Edit')])[1]")
+    WebElement boostAdsEdit;
     @FindBy(id = "icon1")
     WebElement addShowUp;
     @FindBy(id = "icon7")
@@ -66,12 +67,15 @@ public class AdsBoosting extends Base {
    public void clickOnTotalActiveAds(){
         totalActiveAds.click();
    }
-    public void clickOnBoostAds(){
-        boostAds.click();
-    }
+
     public void clickOnAllJobs(){
         allJobsClick.click();
     }
+
+    public void clickOnEditAds(){
+        boostAdsEdit.click();
+    }
+
     public String getFirstBoostButtonOnclick() {
         return boostAds.getAttribute("onclick");
     }
