@@ -162,20 +162,20 @@ Feature: Pending post functionality
   So that I can find specific records easily with activation Post in the active Post"
 
     Given I Click on Pending All post
-    When I click on the Preview link for update post "Junior Accountant001"
+    When I click on the Preview link for update post "Office Admin"
     Then I should be navigated to the post preview page
     And I click on Edit btn
-    And I fill Title "Junior Accountant002"
+    And I fill Title "Office Admin2"
     And I select of Job type "Per Time"
     And I fill contact phone number "01548795299"
-    And I fill contact email "account@gamil.com"
+    And I fill contact email "buyme09@gamil.com"
    # And I pick application deadline "28"
     And I click on update btn
     And I want to select post status "Active"
     Then I click on pending post update btn
     And I hover on Active post
     And I click on All active post
-    And the "Title" column should contain the value "Junior Accountant002"
+    And the "Title" column should contain the value "Office Admin2"
 
   @admin @regression
   Scenario:Pending Post Pagination works correctly
