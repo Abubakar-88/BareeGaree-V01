@@ -6,7 +6,7 @@ Feature: Ads Boosting for General User
     When Satisfy that homepage is visible
     Given I click on login menu
     When I click on General user of login menu
-    Then I fill userName "testUser02"
+    Then I fill email "testUser02"
     And I fill password "sid21@A!"
     And I click on login submit btn
     And I should see my profile name "Abu Siddique" in the dashboard
@@ -39,9 +39,11 @@ Feature: Ads Boosting for General User
     Then  I click on Boost your Ad
     And I select Show Up statement
     And I select Between promotion
+    And I select 5 Day
+    And I click on Continue btn
     And I select Payment By Bundle
     And I should see promotion amount "570" is added correctly
-    Then I click on Make payement btn
+    Then I click on Make payment btn
 
   @GeneralUserDashboard @regression
   Scenario: Check the active ad in the carousel

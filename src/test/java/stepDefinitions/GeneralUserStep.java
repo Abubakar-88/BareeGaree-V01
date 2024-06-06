@@ -38,15 +38,15 @@ public class GeneralUserStep extends Base {
     public void iClickOnGeneralUserOfLoginMenu() {
         genUserDashboard.clickGeneralUser();
     }
-    @Then("I fill userName {string}")
-    public void iFillUserName(String userName) {
-        genUserDashboard.enterEmailId(userName);
-    }
+//    @Then("I fill userName {string}")
+//    public void iFillUserName(String userName) {
+//        genUserDashboard.enterEmailId(userName);
+//    }
 
-    @And("I fill password {string}")
-    public void iFillPassword(String pass) {
-        genUserDashboard.enterPassword(pass);
-    }
+//    @And("I fill password {string}")
+//    public void iFillPassword(String pass) {
+//        genUserDashboard.enterPassword(pass);
+//    }
     @And("I click on login submit btn")
     public void iClickOnLoginSubmitBtn() {
         delayOfElement(5);

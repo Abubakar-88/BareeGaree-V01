@@ -46,6 +46,10 @@ public class SignupPage extends Base {
     private WebElement thanaDropdown;
     @FindBy(id = "password")
     private WebElement passwordInput;
+    @FindBy(id = "referenceCode")
+    private WebElement referenceCodeInput;
+
+
 
     @FindBy(id = "confirmPassword")
     private WebElement confirmPasswordInput;
@@ -74,23 +78,17 @@ public class SignupPage extends Base {
         waitForWebdriver(driver, generalUserLink, Duration.ofSeconds(7));
     }
 
-    public void fillSignUpForm(Map<String, String> data) {
-        firstNameInput.sendKeys(data.get("First Name"));
-        lastNameInput.sendKeys(data.get("Last Name"));
-        userNameInput.sendKeys(data.get("User Name"));
-        emailInput.sendKeys(data.get("Email"));
-        phoneInput.sendKeys(data.get("Phone"));
-        whatsappNumberInput.sendKeys(data.get("Whatsapp Number"));
-        // You can add logic to select dropdown values
-        passwordInput.sendKeys(data.get("Password"));
-        confirmPasswordInput.sendKeys(data.get("Confirm Password"));
-    }
+
     public WebElement getSignUpTitleElement() {
         return signUpTitleElement;
     }
     public void enterFirstName(String firstName) {
         firstNameInput.sendKeys(firstName);
     }
+    public void enterReferenceCode(String reference) {
+        referenceCodeInput.sendKeys(reference);
+    }
+
 
     public void enterLastName(String lastName) {
         lastNameInput.sendKeys(lastName);
@@ -119,8 +117,8 @@ public class SignupPage extends Base {
     }
 
     public void selectThana(String thana) {
-        WebElement thanaElement = fluentWait(thanaDropdown);
-        dropDownvalue(thanaElement, thana);
+      //  WebElement thanaElement = fluentWait(thanaDropdown);
+        dropDownvalue(thanaDropdown, thana);
     }
 
     public void enterPassword(String password) {

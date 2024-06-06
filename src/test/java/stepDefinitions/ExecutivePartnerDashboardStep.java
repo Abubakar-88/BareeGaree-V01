@@ -1,4 +1,4 @@
-package stepDefinitions.generalDashboard;
+package stepDefinitions;
 
 import base.Base;
 import io.cucumber.datatable.DataTable;
@@ -6,6 +6,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.commons.exec.DaemonExecutor;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.junit.Assert;
 import pages.executivePartner.ExecutivePartnerDashboard;
@@ -37,6 +38,24 @@ public class ExecutivePartnerDashboardStep extends Base {
         // Perform assertion
         Assert.assertEquals("Place holder text doesn't match",usernameText, title  );
     }
+
+    @And("the user information should be displayed correctly")
+    public void theUserInformationShouldBeDisplayedCorrectly(DataTable dataTable) {
+        Map<String, String> data = dataTable.asMap(String.class, String.class);
+
+        Assert.assertEquals(data.get("Name"), exPartnerDash.getName());
+        Assert.assertEquals(data.get("User Name"), exPartnerDash.getUserName());
+        Assert.assertEquals(data.get("Email"), exPartnerDash.getEmail());
+        Assert.assertEquals(data.get("Phone Number"), exPartnerDash.getPhoneNumber());
+        Assert.assertEquals(data.get("WhatsApp Number"), exPartnerDash.getWhatsappNumber());
+        Assert.assertEquals(data.get("Reference Code"), exPartnerDash.getReferenceCode());
+        Assert.assertEquals(data.get("District"), exPartnerDash.getDistrict());
+        Assert.assertEquals(data.get("Area"), exPartnerDash.getArea());
+    }
+
+
+
+
 
 //    @And("I am taking data from {string} and {int}")
 //    public void iAmTakingDataFromAndRowNumber(String sheetName, int rowNumber) throws IOException, InvalidFormatException {
@@ -143,4 +162,110 @@ public class ExecutivePartnerDashboardStep extends Base {
 
         exPartnerDash.enterPostArticle(postArticle);
     }
+
+    @And("I select of Between promotion for 7 Day")
+    public void iSelectOfBetweenPromotionForDay() {
+        Set<String> handles = driver.getWindowHandles();
+        List<String> hList = new ArrayList<String>(handles);
+        if(switchtoRightWindow("Between", hList)) {
+        }
+        delayOfElement(3);
+        exPartnerDash.select7Day();
+    }
+
+    @And("I select Top post")
+    public void iSelectTopPost() {
+        delayOfElement(2);
+        exPartnerDash.clickOnTopPostIcon();
+    }
+
+    @And("I select of Top post for 5 Day")
+    public void iSelectOfTopPostForDay() {
+        Set<String> handles = driver.getWindowHandles();
+        List<String> hList = new ArrayList<String>(handles);
+        if(switchtoRightWindow("Top Post", hList)) {
+        }
+        delayOfElement(3);
+        exPartnerDash.select5Day();
+    }
+
+    @Given("I click on the active user")
+    public void iClickOnTheActiveUser() {
+        delayOfElement(2);
+        exPartnerDash.clickOnActiveUser();
+    }
+
+    @When("I click on the ViewAd link {string}")
+    public void iClickOnTheViewAdLink(String email) {
+        delayOfElement(2);
+        exPartnerDash.clickPreviewLinkForAd(email);
+    }
+
+    @Then("I should be navigated to the user's active postList page")
+    public void iShouldBeNavigatedToTheUserSActivePostListPage() {
+        exPartnerDash.isAactiveUserPostList();
+    }
+
+
+    @Then("the top post should have the title {string}")
+    public void theTopPostShouldHaveTheTitle(String expectedTitle) {
+        delayOfElement(4);
+
+        boolean isProductTopListed = exPartnerDash.isProductTopListed(expectedTitle);
+
+        // Print the result
+        if (isProductTopListed) {
+            System.out.println("The product 'Mens Hands Begs2' is top listed.");
+        } else {
+            System.out.println("The product 'Mens Hands Begs2' is not top listed.");
+        }
+
+    }
+
+    @And("I navigated to the all post of bangladesh")
+    public void iNavigatedToTheAllPostOfBangladesh() {
+
+     exPartnerDash.isNavigatedAllPost();
+//        Set<String> handles = driver.getWindowHandles();
+//        List<String> hList = new ArrayList<String>(handles);
+//        if(switchtoRightWindow("SELECT YOUR LOCATION", hList)) {
+//        }
+
+
+        delayOfElement(3);
+        exPartnerDash.closeModal();
+    }
+
+    @Given("I click on All ads")
+    public void iClickOnAllAds() {
+        delayOfElement(2);
+        exPartnerDash.clickOnAllAds();
+    }
+    @When("I click on Rentals car")
+    public void iClickOnRentalcar() {
+
+      //  delayOfElement(3);
+        exPartnerDash.clickOnAppleiPhone15();
+
+    }
+
+
+    @Then("I click on the post details boost")
+    public void iClickOnThePostDetailsBoost() {
+        delayOfElement(2);
+        exPartnerDash.clickOnPostDetailsBoost();
+    }
+
+    @And("I navigated to the boost page of this post")
+    public void iNavigatedToTheBoostPageOfThisPost() {
+        exPartnerDash.isNavigatedBoostPage();
+    }
+
+    @And("I select of Between promotion for 5 Day amount")
+    public void iSelectOfBetweenPromotionForDayAmount() {
+        delayOfElement(2);
+        exPartnerDash.select5daysAmount();
+    }
+
+
 }

@@ -4,9 +4,9 @@ Feature: General user functionality
 
   Background:
     Given I am on the admin login page
-    When I fill userName "admin@gmail.com"
+    When I fill email "admin@gmail.com"
     Then I fill password "@Bgca01##@"
-    And I click on login submit btn
+    And I click on admin login submit btn
     And I hover on General User
 
    # pdf file download not included all information

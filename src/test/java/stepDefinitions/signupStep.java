@@ -23,17 +23,17 @@ import static org.junit.Assert.assertEquals;
 public class signupStep extends Base {
     SignupPage signUpPage = new SignupPage(driver);
     HomePage homePage = new HomePage(driver);
-    String email;
-    String password;
-    String confirmPassword;
-    String userName;
-    String firstName;
-    String lastName;
-    String mobileNumber;
-    String whatsappNumber;
-    String district;
-    String thana;
-
+//    String email;
+//    String password;
+//    String confirmPassword;
+//    String userName;
+//    String firstName;
+//    String lastName;
+//    String mobileNumber;
+//    String whatsappNumber;
+//    String district;
+//    String thana;
+//    String referenceCode;
 
 
 
@@ -58,70 +58,71 @@ public class signupStep extends Base {
     }
 
 
-    @And("I fill out the signup form with data from {string} and {int}")
-    public void iFillOutTheSignupFormWithDataFromAndRowNumber(String sheetName, int rowNumber) throws IOException, InvalidFormatException {
-        reader = new ExcelReader();
-        List<Map<String,String>> readData =
-                reader.getData(System.getProperty("user.dir") + "\\src\\test\\resources\\data\\AutoData.xlsx", sheetName);
-        firstName = readData.get(rowNumber).get("First name");
-        lastName = readData.get(rowNumber).get("Last name");
-        email = readData.get(rowNumber).get("Email");
-        userName = readData.get(rowNumber).get("UserName");
-        district = readData.get(rowNumber).get("District");
-        thana = readData.get(rowNumber).get("Thana");
-        password = readData.get(rowNumber).get("Password");
-        confirmPassword = readData.get(rowNumber).get("Confirm Password");
-        mobileNumber = readData.get(rowNumber).get("Mobile Number");
-        whatsappNumber = readData.get(rowNumber).get("Whatsapp Number");
+//    @And("I fill out the signup form with data from {string} and {int}")
+//    public void iFillOutTheSignupFormWithDataFromAndRowNumber(String sheetName, int rowNumber) throws IOException, InvalidFormatException {
+//        reader = new ExcelReader();
+//        List<Map<String,String>> readData =
+//                reader.getData(System.getProperty("user.dir") + "\\src\\test\\resources\\data\\AutoData.xlsx", sheetName);
+//        firstName = readData.get(rowNumber).get("First name");
+//        lastName = readData.get(rowNumber).get("Last name");
+//        email = readData.get(rowNumber).get("Email");
+//        userName = readData.get(rowNumber).get("UserName");
+//        district = readData.get(rowNumber).get("District");
+//        thana = readData.get(rowNumber).get("Thana");
+//        password = readData.get(rowNumber).get("Password");
+//        confirmPassword = readData.get(rowNumber).get("Confirm Password");
+//        mobileNumber = readData.get(rowNumber).get("Mobile Number");
+//        whatsappNumber = readData.get(rowNumber).get("Whatsapp Number");
+//        referenceCode = readData.get(rowNumber).get("ReferenceCode");
+//    }
+
+    @And("I fill first name {string}")
+    public void iFillFirstName( String fName) {
+        signUpPage.enterFirstName(fName);
+    }
+    @And("I fill last name {string}")
+    public void iFillLastName(String lName) {
+        signUpPage.enterLastName(lName);
 
     }
 
-    @And("I fill first name")
-    public void iFillFirstName() {
-        signUpPage.enterFirstName(firstName);
-    }
-    @And("I fill last name")
-    public void iFillLastName() {
-        signUpPage.enterLastName(lastName);
-
-    }
-
-    @Then("I fill userName")
-    public void iFillUserName() {
+    @Then("I fill userName {string}")
+    public void iFillUserName(String userName) {
         signUpPage.enterUserName(userName);
     }
 
-    @And("I fill email")
-    public void iFillEmail() {
+    @And("I fill email {string}")
+    public void iFillEmail(String email) {
         signUpPage.enterEmail(email);
     }
 
-    @And("I fill password")
-    public void iFillPassword() {
+    @And("I fill password {string}")
+    public void iFillPassword(String password) {
         signUpPage.enterPassword(password);
     }
 
-    @And("I fill confirm password")
-    public void iFillConfirmPassword() {
+    @And("I fill confirm password {string}")
+    public void iFillConfirmPassword(String confirmPassword) {
         signUpPage.enterConfirmPassword(confirmPassword);
     }
-    @And("I select district name")
-    public void iSelectDistrictName()  {
+    @And("I select district name {string}")
+    public void iSelectDistrictName(String district)  {
         signUpPage.selectDistrict(district);
     }
 
-    @And("I select thana name")
-    public void iSelectThanaName() {
+    @And("I select thana name {string}")
+    public void iSelectThanaName(String thana) {
+        delayOfElement(2);
         signUpPage.selectThana(thana);
     }
 
-    @And("I fill mobile number")
-    public void iFillMobileNumber() {
+    @And("I fill mobile number {string}")
+    public void iFillMobileNumber(String mobileNumber) {
         signUpPage.enterPhone(mobileNumber);
     }
 
-    @And("I fill whatsapp number")
-    public void iFillWhatsappNumber() {
+    @And("I fill whatsapp number {string}")
+    public void iFillWhatsappNumber(String whatsappNumber) {
         signUpPage.enterWhatsappNumber(whatsappNumber);
     }
 
@@ -151,13 +152,6 @@ public class signupStep extends Base {
 
 
 
-    @When("I fill out the signup form with the following details:")
-    public void iFillOutTheSignupFormWithTheFollowingDetails(DataTable dataTable) {
-        Map<String, String> data = dataTable.asMap(String.class, String.class);
-        signUpPage.fillSignUpForm(data);
-    }
-
-
     @Then("I hover on Member menu")
     public void iHoverOnMemberMenu() {
         homePage.hoverOnMember();
@@ -179,4 +173,8 @@ public class signupStep extends Base {
         }
     }
 
+    @And("I fill reference code {string}")
+    public void iFillReferenceCode(String referenceCode) {
+        signUpPage.enterReferenceCode(referenceCode);
+    }
 }

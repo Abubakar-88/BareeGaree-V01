@@ -6,7 +6,7 @@ Feature: Vehicle category add posting of subcategory
     When Satisfy that homepage is visible
     Given I click on login menu
     When I click on General user of login menu
-    Then I fill userName "testUser02"
+    Then I fill email "testUser02"
     And I fill password "sid21@A!"
     And I click on login submit btn
     And I should see my profile name "Abu Siddique" in the dashboard

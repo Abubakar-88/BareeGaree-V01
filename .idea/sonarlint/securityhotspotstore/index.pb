@@ -45,3 +45,5 @@ x
 Hsrc/test/java/stepDefinitions/generalDashboard/JobsOfGdashboardStep.java,7\7\779b56821b41852377bf2d17e7666b81b9ce9c7e
 q
 Asrc/test/java/pages/generalUserDash/JobsCatPageOfG_dashboard.java,0\1\01e8572859fa81c6d58447ce81c784141a469928
+p
+@src/test/java/stepDefinitions/ExecutivePartnerDashboardStep.java,b\f\bf2b46113257d548bf903257c5d7f601d14d2f56

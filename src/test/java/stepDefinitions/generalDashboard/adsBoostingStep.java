@@ -51,17 +51,23 @@ public class adsBoostingStep extends Base {
     public void iSelectBetweenPromotion() {
         delayOfElement(2);
         adsBoosting.clickOnBetween();
+    }
+    @And("I select 5 Day")
+    public void iSelectDay() {
         Set<String> handles = driver.getWindowHandles();
         List<String> hList = new ArrayList<String>(handles);
         if(switchtoRightWindow("Between", hList)) {
         }
         delayOfElement(4);
-
         adsBoosting.clickOn5Days();
+    }
+
+
+    @And("I click on Continue btn")
+    public void iClickOnContinueBtn() {
         delayOfElement(2);
         adsBoosting.clickOnbtnContinue();
     }
-
 
     @And("I select Payment By Bundle")
     public void iSelectPaymentByBundle() {
@@ -71,8 +77,8 @@ public class adsBoostingStep extends Base {
     }
 
 
-    @Then("I click on Make payement btn")
-    public void iClickOnMakePayementBtn() {
+    @Then("I click on Make payment btn")
+    public void iClickOnMakePaymentBtn() {
         delayOfElement(2);
         adsBoosting.clickOnmakePayment();
     }
@@ -111,4 +117,6 @@ public class adsBoostingStep extends Base {
     public void iClickOnTheEdit() {
         adsBoosting.clickOnEditAds();
     }
+
+
 }
